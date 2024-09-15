@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:to_do/ui/views/home_page.dart';
 
-void main() {
+void main() async {
+  //initialize the hive database
+  await Hive.initFlutter();
+
+  //open the hive box
+  await Hive.openBox('toDoListBox');
+
   runApp(const MyApp());
 }
 
